@@ -1,8 +1,6 @@
 import requests
 from duckduckgo_search import DDGS
 import json
-from IPython.display import Markdown, display
-import time
 
 class BookAnalyzer:
     def __init__(self, mistral_api_key):
