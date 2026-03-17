@@ -29,10 +29,8 @@
 
 # Как выглядит бот
 
-![к1](https://github.com/user-attachments/assets/a9cbdaf6-5913-42c3-8d9f-d494f6c2658a)
-![к2](https://github.com/user-attachments/assets/c1c82e46-4f93-4571-8165-3a30c04f7d1a)
-![к3](https://github.com/user-attachments/assets/eddd51da-f947-4259-aee1-bbaac4a4ad58)
-![к4](https://github.com/user-attachments/assets/e19af52a-9ad3-41b5-a06b-d501fb1ae7b0)
+![MyCollages1](https://github.com/user-attachments/assets/80375f7e-fec2-4e4e-b381-d9d89e101956)
+![MyCollages2](https://github.com/user-attachments/assets/5b8e1d87-aa22-4f02-a469-6e767efd5caa)
 
 
 
