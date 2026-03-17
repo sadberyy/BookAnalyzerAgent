@@ -30,6 +30,11 @@
 # Как выглядит бот
 ![открываем бот](https://github.com/user-attachments/assets/24c984f3-3b69-444c-9729-f3ebf6dbec55)
 
+|![1 бот колаж](https://github.com/user-attachments/assets/f324388e-99f6-4c29-a256-86ceb6005328)|![2 бот колаж](https://github.com/user-attachments/assets/9fbab225-0d27-4513-985b-eec23b83f558)|![3 бот колаж](https://github.com/user-attachments/assets/16d011da-6b70-4004-b4ea-9803aafb31f1)|![4 бот колаж](https://github.com/user-attachments/assets/7daf36dd-cdd3-439b-9c5f-f075d75bbb1e)|
+
+
+
+
 
 
 
