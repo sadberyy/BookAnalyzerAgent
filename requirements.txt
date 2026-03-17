@@ -2,3 +2,4 @@ aiogram
 python-dotenv
 requests
 duckduckgo-search
+aiohttp
