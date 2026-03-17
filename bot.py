@@ -16,10 +16,8 @@ MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 # логирование, чтобы видеть ошибки
 logging.basicConfig(level=logging.INFO)
 
-
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
-
 book_analyzer = BookAnalyzer(mistral_api_key=MISTRAL_API_KEY)
 
 # /start
@@ -64,12 +62,6 @@ async def analyze_book_message(message: Message):
             "или убедись, что ты правильно написал(а) название и автора."
         )
 
-
-# запуск бота
-async def main():
-    print("---------------------Бот готов к работе!----------------------")
-    await dp.start_polling(bot)
-
 async def handle(request):
     return web.Response(text="Bot is running")
 
@@ -84,9 +76,18 @@ async def run_web_server():
     print(f"---------------------Dummy HTTP server started---------------------")
     await asyncio.Event().wait()
 
-# веб-сервер в фоне
-loop = asyncio.get_event_loop()
-loop.create_task(run_web_server())
+# запуск бота
+async def main():
+    print("---------------------Бот готов к работе!----------------------")
+    asyncio.create_task(run_web_server())
+    await dp.start_polling(bot)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except RuntimeError as e:
+        # если нет event loop, создаём новый
+        if "no current event loop" in str(e):
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(main())
