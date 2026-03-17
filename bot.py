@@ -1,4 +1,5 @@
 import asyncio
+from aiohttp import web
 import logging
 import os
 from aiogram import Bot, Dispatcher, types
@@ -68,6 +69,24 @@ async def analyze_book_message(message: Message):
 async def main():
     print("---------------------Бот готов к работе!----------------------")
     await dp.start_polling(bot)
+
+async def handle(request):
+    return web.Response(text="Bot is running")
+
+async def run_web_server():
+    app = web.Application()
+    app.router.add_get('/', handle)
+    port = int(os.environ.get('PORT', 10000))
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, '0.0.0.0', port)
+    await site.start()
+    print(f"---------------------Dummy HTTP server started---------------------")
+    await asyncio.Event().wait()
+
+# веб-сервер в фоне
+loop = asyncio.get_event_loop()
+loop.create_task(run_web_server())
 
 if __name__ == "__main__":
     asyncio.run(main())
