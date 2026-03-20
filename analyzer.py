@@ -21,8 +21,7 @@ class BookAnalyzer:
                     if r.get('body'):
                         results.append({
                             'title': r.get('title', ''),
-                            'body': r.get('body', ''),
-                            'href': r.get('href', '')
+                            'body': r.get('body', '')
                         })
             return results
         except Exception as e:
@@ -42,7 +41,6 @@ class BookAnalyzer:
 
         # собираем информацию
         all_info = []
-        sources = []
 
         for query in queries:
 
@@ -54,7 +52,6 @@ class BookAnalyzer:
                     all_info.append(f"📌 {r['title']}")
                     all_info.append(r['body'])
                     all_info.append("---")
-                    sources.append(r.get('href', ''))
 
         # если мало информации, пробуем общий запрос
         if len(all_info) < 3:
